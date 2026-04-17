@@ -1,0 +1,1554 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gastrau's Golf Center | Year-Round Driving Range | Oak Creek, WI</title>
+    <meta
+      name="description"
+      content="Gastrau's Golf Center in Oak Creek, Wisconsin—year-round driving range, Toptracer, miniature golf, and more. Plan your visit."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-ivory: #f8f5ef;
+        --surface-white: #fffdf9;
+        --green-deep: #1e3a2f;
+        --text-warm: #2c2c2a;
+        --gold-muted: #b8985a;
+        --hairline: rgba(30, 58, 47, 0.2);
+        --shadow-soft: 0 20px 34px -26px rgba(44, 44, 42, 0.4);
+        --space-xs: 0.5rem;
+        --space-sm: 0.875rem;
+        --space-md: 1.25rem;
+        --space-lg: 2rem;
+        --space-xl: 3.5rem;
+        --space-xxl: 6rem;
+        --container: min(1140px, 90vw);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Montserrat", Arial, sans-serif;
+        font-weight: 300;
+        color: var(--text-warm);
+        background: var(--bg-ivory);
+        line-height: 1.65;
+      }
+
+      img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: var(--container);
+        margin: 0 auto;
+      }
+
+      .section {
+        padding: var(--space-xxl) 0;
+      }
+
+      .section-divider {
+        border-top: 0.5px solid var(--hairline);
+      }
+
+      .section-kicker {
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 0.7rem;
+        color: var(--gold-muted);
+        margin-bottom: var(--space-sm);
+      }
+
+      .section-title {
+        margin: 0 0 var(--space-md);
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(2rem, 4vw, 3.35rem);
+        line-height: 1.05;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+      }
+
+      .section-intro {
+        max-width: 62ch;
+        margin: 0;
+        font-size: 1rem;
+        color: rgba(44, 44, 42, 0.84);
+        text-align: left;
+      }
+
+      .section-intro.left {
+        margin: 0;
+      }
+
+      .visit-extras-lead {
+        max-width: 54ch;
+        margin: 0 0 var(--space-xl);
+        font-size: 1rem;
+        color: rgba(44, 44, 42, 0.84);
+      }
+
+      .info-trio {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.25rem;
+        align-items: stretch;
+      }
+
+      .info-trio-card {
+        background: var(--surface-white);
+        border: 0.5px solid var(--hairline);
+        padding: 1.5rem 1.35rem 1.65rem;
+        box-shadow: var(--shadow-soft);
+        scroll-margin-top: 6rem;
+      }
+
+      .info-trio-card .info-trio-kicker {
+        margin: 0 0 0.45rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 0.65rem;
+        color: var(--gold-muted);
+      }
+
+      .info-trio-card .info-trio-title {
+        margin: 0 0 0.85rem;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(1.32rem, 2.1vw, 1.72rem);
+        font-weight: 500;
+        line-height: 1.12;
+        color: var(--green-deep);
+        letter-spacing: 0.02em;
+      }
+
+      .info-trio-card .info-trio-copy {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.62;
+        color: rgba(44, 44, 42, 0.86);
+      }
+
+      .info-trio-card a {
+        color: var(--green-deep);
+        text-decoration: underline;
+        text-underline-offset: 0.14em;
+      }
+
+      @media (max-width: 920px) {
+        .info-trio {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      #experiences .section-intro a {
+        color: var(--green-deep);
+        text-decoration: underline;
+        text-underline-offset: 0.15em;
+      }
+
+      .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 50;
+        transition: background-color 250ms ease, border-color 250ms ease, box-shadow 250ms ease;
+        border-bottom: 0.5px solid transparent;
+      }
+
+      .site-header.scrolled {
+        background: rgba(248, 245, 239, 0.96);
+        border-bottom-color: var(--hairline);
+        box-shadow: 0 14px 30px -30px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(7px);
+      }
+
+      .nav-wrap {
+        width: min(1240px, 92vw);
+        margin: 0 auto;
+        padding: 1.1rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-lg);
+      }
+
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 1.75rem;
+        letter-spacing: 0.04em;
+        color: #f4eee1;
+        transition: color 250ms ease;
+      }
+
+      .logo-img {
+        width: 2.6rem;
+        height: 2.6rem;
+        object-fit: contain;
+        flex-shrink: 0;
+        border-radius: 50%;
+        box-shadow: 0 2px 14px rgba(0, 0, 0, 0.22);
+      }
+
+      .site-header.scrolled .logo {
+        color: var(--green-deep);
+      }
+
+      .site-header.scrolled .logo-img {
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.12);
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+        margin: 0;
+        padding: 0;
+        color: #f5f2ea;
+        font-size: 0.85rem;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+
+      .site-header.scrolled .nav-links {
+        color: rgba(44, 44, 42, 0.9);
+      }
+
+      .nav-links a {
+        position: relative;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.25rem;
+        width: 100%;
+        height: 0.5px;
+        transform: scaleX(0);
+        transform-origin: left;
+        background: currentColor;
+        transition: transform 200ms ease;
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a:focus-visible::after {
+        transform: scaleX(1);
+      }
+
+      .nav-cta {
+        border: 0.5px solid rgba(244, 238, 225, 0.9);
+        color: #f4eee1;
+        padding: 0.55rem 1rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+      }
+
+      .nav-cta:hover,
+      .nav-cta:focus-visible {
+        background: rgba(248, 245, 239, 0.2);
+      }
+
+      .site-header.scrolled .nav-cta {
+        color: var(--green-deep);
+        border-color: rgba(30, 58, 47, 0.45);
+      }
+
+      .site-header.scrolled .nav-cta:hover,
+      .site-header.scrolled .nav-cta:focus-visible {
+        background: rgba(30, 58, 47, 0.08);
+      }
+
+      .hamburger {
+        display: none;
+        background: transparent;
+        border: none;
+        width: 2.4rem;
+        height: 2.4rem;
+        padding: 0;
+        cursor: pointer;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 1.45rem;
+        height: 1px;
+        background: #f4eee1;
+        margin: 0.34rem auto;
+        transition: transform 220ms ease, opacity 220ms ease, background-color 220ms ease;
+      }
+
+      .site-header.scrolled .hamburger span {
+        background: var(--green-deep);
+      }
+
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        color: #f7f2e8;
+        text-align: center;
+        overflow: hidden;
+        isolation: isolate;
+      }
+
+      .hero-media {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(to bottom, rgba(30, 58, 47, 0.52) 0%, rgba(30, 58, 47, 0.62) 45%, rgba(30, 58, 47, 0.48) 100%),
+          url("/hero-home.png");
+        background-size: cover;
+        background-position: 42% center;
+        transform: scale(1.05);
+        will-change: transform;
+        z-index: -1;
+      }
+
+      .hero-content {
+        text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
+      }
+
+      .hero-content {
+        width: min(900px, 90vw);
+        padding: 9rem 0 5rem;
+      }
+
+      .hero-kicker {
+        font-size: 0.73rem;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        color: rgba(247, 242, 232, 0.9);
+      }
+
+      .hero h1 {
+        margin: var(--space-md) 0;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-weight: 500;
+        font-size: clamp(2.6rem, 7.2vw, 5.5rem);
+        line-height: 0.98;
+        letter-spacing: 0.02em;
+      }
+
+      .hero p {
+        margin: 0 auto;
+        max-width: 52ch;
+        font-size: 1rem;
+        color: rgba(247, 242, 232, 0.97);
+      }
+
+      .hero-actions {
+        margin-top: var(--space-xl);
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.82rem 1.35rem;
+        min-width: 10.75rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        border: 0.5px solid transparent;
+        transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+      }
+
+      .btn-primary {
+        background: var(--green-deep);
+        color: var(--bg-ivory);
+        border-color: var(--green-deep);
+      }
+
+      .btn-primary:hover,
+      .btn-primary:focus-visible {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 24px -22px rgba(30, 58, 47, 0.9);
+      }
+
+      .btn-ghost {
+        border-color: rgba(248, 245, 239, 0.95);
+        color: #f7f2e8;
+        background: rgba(248, 245, 239, 0.06);
+      }
+
+      .btn-ghost:hover,
+      .btn-ghost:focus-visible {
+        transform: translateY(-2px);
+        background: rgba(248, 245, 239, 0.17);
+      }
+
+      .courses {
+        background: var(--bg-ivory);
+        text-align: center;
+      }
+
+      .card-grid {
+        margin-top: var(--space-xl);
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--space-lg);
+      }
+
+      .course-card {
+        text-align: left;
+        background: var(--surface-white);
+        border: 0.5px solid var(--hairline);
+        overflow: clip;
+        display: flex;
+        flex-direction: column;
+        transition: transform 260ms ease, box-shadow 260ms ease;
+      }
+
+      .course-card:hover,
+      .course-card:focus-within {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-soft);
+      }
+
+      .course-card img {
+        aspect-ratio: 16 / 10;
+      }
+
+      .card-body {
+        padding: 1.45rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+
+      .card-body h3 {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 1.05;
+        margin: 0 0 0.6rem;
+      }
+
+      .card-body p {
+        margin: 0;
+        color: rgba(44, 44, 42, 0.86);
+      }
+
+      .learn-link {
+        display: inline-block;
+        margin-top: auto;
+        padding-top: 1.25rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 0.72rem;
+        color: var(--green-deep);
+        border-bottom: 0.5px solid rgba(30, 58, 47, 0.5);
+        padding-bottom: 0.3rem;
+      }
+
+      .legacy {
+        background: #fcfaf5;
+      }
+
+      .legacy-grid {
+        margin-top: 1.8rem;
+        border-top: 0.5px solid var(--hairline);
+        border-bottom: 0.5px solid var(--hairline);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .legacy-item {
+        padding: 2.2rem 1rem;
+        text-align: center;
+      }
+
+      .legacy-item + .legacy-item {
+        border-left: 0.5px solid var(--hairline);
+      }
+
+      .legacy-value {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(2.4rem, 5vw, 4rem);
+        line-height: 1;
+        color: var(--green-deep);
+      }
+
+      .legacy-label {
+        margin-top: 0.45rem;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 0.74rem;
+        color: rgba(44, 44, 42, 0.84);
+      }
+
+      .experiences {
+        background: var(--surface-white);
+      }
+
+      .experience-row {
+        display: grid;
+        grid-template-columns: 1.05fr 1fr;
+        gap: clamp(2rem, 5vw, 5.5rem);
+        align-items: center;
+        padding: 3rem 0;
+        border-bottom: 0.5px solid var(--hairline);
+      }
+
+      .experience-row:first-of-type {
+        border-top: 0.5px solid var(--hairline);
+      }
+
+      .experience-row.reverse {
+        grid-template-columns: 1fr 1.05fr;
+      }
+
+      .experience-row.reverse .experience-media {
+        order: 2;
+      }
+
+      .experience-row.reverse .experience-copy {
+        order: 1;
+      }
+
+      .experience-media img {
+        aspect-ratio: 4 / 3;
+      }
+
+      .experience-copy h3 {
+        margin: 0 0 0.7rem;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(2rem, 3.8vw, 3rem);
+        font-weight: 500;
+      }
+
+      .experience-copy p {
+        margin: 0 0 0.9rem;
+      }
+
+      .pull-quote {
+        background: #f6f2e9;
+        text-align: center;
+      }
+
+      .pull-quote blockquote {
+        margin: 0 auto;
+        max-width: 17ch;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(2rem, 5vw, 4rem);
+        font-style: italic;
+        line-height: 1.1;
+        color: var(--green-deep);
+      }
+
+      .pull-quote p {
+        margin: var(--space-lg) auto 0;
+        max-width: 50ch;
+      }
+
+      .info-grid {
+        margin-top: var(--space-xl);
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-lg);
+      }
+
+      .info-card {
+        background: var(--surface-white);
+        border: 0.5px solid var(--hairline);
+        padding: 1.4rem;
+      }
+
+      .info-card h3 {
+        margin: 0 0 0.75rem;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 1.85rem;
+        line-height: 1.05;
+        font-weight: 500;
+      }
+
+      .info-card ul {
+        margin: 0;
+        padding-left: 1rem;
+      }
+
+      .info-card li {
+        margin-bottom: 0.45rem;
+      }
+
+      .pricing-grid {
+        margin-top: var(--space-xl);
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-lg);
+      }
+
+      /* Third card spans both columns so the grid stays balanced (no empty corner). */
+      .pricing-grid .price-table:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .price-table {
+        border: 0.5px solid var(--hairline);
+        background: var(--surface-white);
+      }
+
+      .price-table h3 {
+        margin: 0;
+        padding: 1rem 1.15rem;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 1.9rem;
+        font-weight: 500;
+        border-bottom: 0.5px solid var(--hairline);
+      }
+
+      .price-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.8rem;
+        padding: 0.85rem 1.15rem;
+        border-bottom: 0.5px solid rgba(30, 58, 47, 0.13);
+      }
+
+      .price-row:last-child {
+        border-bottom: none;
+      }
+
+      .price-row strong {
+        color: var(--green-deep);
+      }
+
+      .owner-grid {
+        margin-top: var(--space-xl);
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--space-lg);
+      }
+
+      .owner-card {
+        border: 0.5px solid var(--hairline);
+        background: var(--surface-white);
+        padding: 1.2rem;
+      }
+
+      .owner-card h3 {
+        margin: 0 0 0.3rem;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 1.6rem;
+        font-weight: 500;
+      }
+
+      .owner-card p {
+        margin: 0;
+        font-size: 0.95rem;
+      }
+
+      .contact-form-section {
+        background: var(--surface-white);
+      }
+
+      .form-shell {
+        margin-top: var(--space-xl);
+        border: 0.5px solid var(--hairline);
+        background: var(--bg-ivory);
+        padding: clamp(1.2rem, 2vw, 2rem);
+      }
+
+      .contact-form {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem 1.1rem;
+      }
+
+      .form-field {
+        display: grid;
+        gap: 0.45rem;
+      }
+
+      .form-field.full {
+        grid-column: 1 / -1;
+      }
+
+      .form-field label {
+        text-transform: uppercase;
+        letter-spacing: 0.11em;
+        font-size: 0.68rem;
+        color: rgba(44, 44, 42, 0.84);
+      }
+
+      .form-field input,
+      .form-field select,
+      .form-field textarea {
+        width: 100%;
+        border: 0.5px solid rgba(30, 58, 47, 0.26);
+        background: #fff;
+        color: var(--text-warm);
+        padding: 0.72rem 0.75rem;
+        font: inherit;
+      }
+
+      .form-field textarea {
+        resize: vertical;
+      }
+
+      .form-submit {
+        margin-top: 0.4rem;
+        cursor: pointer;
+        border: 0.5px solid var(--green-deep);
+      }
+
+      .form-note {
+        margin: 1rem 0 0;
+        font-size: 0.84rem;
+        color: rgba(44, 44, 42, 0.8);
+      }
+
+      .site-footer {
+        background: var(--green-deep);
+        color: #f1ebdd;
+        padding: 3.25rem 0 1.85rem;
+      }
+
+      .footer-main {
+        display: grid;
+        grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.95fr) minmax(0, 0.95fr) minmax(0, 1.05fr);
+        gap: 2.25rem 2rem;
+        align-items: start;
+      }
+
+      .footer-brand {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      @media (min-width: 520px) {
+        .footer-brand {
+          flex-direction: row;
+          align-items: flex-start;
+          gap: 1.15rem;
+        }
+      }
+
+      .footer-logo {
+        width: 4rem;
+        height: 4rem;
+        object-fit: contain;
+        border-radius: 50%;
+        background: rgba(255, 253, 249, 0.08);
+        padding: 0.2rem;
+        flex-shrink: 0;
+      }
+
+      .footer-brand-text {
+        min-width: 0;
+      }
+
+      .footer-brand h2 {
+        margin: 0;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(1.65rem, 2.6vw, 2.1rem);
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        line-height: 1.05;
+      }
+
+      .footer-tagline {
+        margin: 0.55rem 0 0;
+        max-width: 36ch;
+        font-size: 0.9rem;
+        line-height: 1.55;
+        color: rgba(241, 235, 221, 0.82);
+      }
+
+      .footer-nav-col {
+        min-width: 0;
+      }
+
+      .footer-title {
+        margin: 0 0 0.75rem;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: rgba(241, 235, 221, 0.78);
+      }
+
+      .footer-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 0.45rem;
+      }
+
+      .footer-list a {
+        font-size: 0.88rem;
+        color: rgba(241, 235, 221, 0.94);
+      }
+
+      .footer-list a:hover,
+      .footer-list a:focus-visible {
+        color: #fff;
+      }
+
+      .footer-visit {
+        min-width: 0;
+      }
+
+      .footer-address {
+        margin: 0;
+        font-style: normal;
+        font-size: 0.88rem;
+        line-height: 1.55;
+        color: rgba(241, 235, 221, 0.88);
+      }
+
+      .footer-address p {
+        margin: 0 0 0.45rem;
+      }
+
+      .footer-address a {
+        color: rgba(241, 235, 221, 0.96);
+      }
+
+      .footer-address a:hover,
+      .footer-address a:focus-visible {
+        color: #fff;
+      }
+
+      .footer-fineprint {
+        margin: 0.85rem 0 0;
+        font-size: 0.72rem;
+        line-height: 1.45;
+        color: rgba(241, 235, 221, 0.55);
+        max-width: 32ch;
+      }
+
+      .footer-meta {
+        margin-top: 2.25rem;
+        padding-top: 1.15rem;
+        border-top: 0.5px solid rgba(241, 235, 221, 0.24);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.65rem 1.25rem;
+        font-size: 0.76rem;
+        color: rgba(241, 235, 221, 0.62);
+      }
+
+      .footer-meta a {
+        color: rgba(241, 235, 221, 0.8);
+      }
+
+      .footer-meta a:hover,
+      .footer-meta a:focus-visible {
+        color: #fff;
+      }
+
+      @media (max-width: 960px) {
+        .footer-main {
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem 1.5rem;
+        }
+
+        .footer-brand {
+          grid-column: 1 / -1;
+        }
+
+        .footer-visit {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .footer-main {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 650ms ease, transform 650ms ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .course-card.reveal {
+        transition-duration: 600ms;
+      }
+
+      .mobile-menu {
+        position: absolute;
+        top: calc(100% + 0.35rem);
+        right: 4vw;
+        width: min(19rem, 92vw);
+        background: rgba(248, 245, 239, 0.98);
+        border: 0.5px solid var(--hairline);
+        padding: 1rem 1.1rem;
+        display: none;
+        box-shadow: 0 30px 35px -35px rgba(0, 0, 0, 0.8);
+      }
+
+      .mobile-menu.open {
+        display: block;
+      }
+
+      .mobile-menu a {
+        display: block;
+        padding: 0.6rem 0;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 0.73rem;
+        border-bottom: 0.5px solid rgba(30, 58, 47, 0.16);
+        color: var(--green-deep);
+      }
+
+      .mobile-menu a:last-child {
+        border-bottom: none;
+      }
+
+      @media (max-width: 960px) {
+        .card-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .pricing-grid,
+        .info-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .owner-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .contact-form {
+          grid-template-columns: 1fr;
+        }
+
+        .experience-row,
+        .experience-row.reverse {
+          grid-template-columns: 1fr;
+          gap: 1.6rem;
+        }
+
+        .experience-row.reverse .experience-media,
+        .experience-row.reverse .experience-copy {
+          order: initial;
+        }
+      }
+
+      @media (max-width: 760px) {
+        :root {
+          --space-xxl: 4.5rem;
+        }
+
+        .nav-links,
+        .nav-cta {
+          display: none;
+        }
+
+        .hamburger {
+          display: inline-block;
+        }
+
+        .hero-content {
+          padding-top: 7.8rem;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .card-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .owner-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .legacy-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .legacy-item + .legacy-item {
+          border-left: none;
+          border-top: 0.5px solid var(--hairline);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header" id="siteHeader">
+      <div class="nav-wrap">
+        <a href="#hero" class="logo">
+          <img
+            class="logo-img"
+            src="/logo-gastrau-golf-center.png"
+            width="96"
+            height="96"
+            alt=""
+            decoding="async"
+          />
+          <span class="logo-text">Gastrau's Golf Center</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="/driving-range.html">Driving range</a></li>
+          <li><a href="/toptracer.html">Toptracer</a></li>
+          <li><a href="/club-fittings.html">Club fitting</a></li>
+          <li><a href="/club-repairs.html">Club repair</a></li>
+          <li><a href="/mini-golf.html">Mini golf</a></li>
+        </ul>
+        <a class="nav-cta" href="#contact-form">Contact</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+        <a href="#hero">Home</a>
+        <a href="/driving-range.html">Driving range</a>
+        <a href="/toptracer.html">Toptracer</a>
+        <a href="/club-fittings.html">Club fitting</a>
+        <a href="/club-repairs.html">Club repair</a>
+        <a href="/mini-golf.html">Mini golf</a>
+        <a href="/lessons.html">Lessons</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#hours">Hours</a>
+        <a href="#contact-form">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="hero">
+        <div class="hero-media" id="heroMedia"></div>
+        <div class="hero-content reveal">
+          <p class="hero-kicker">1300 E. Rawson Ave · Oak Creek, WI · Just east of I-41</p>
+          <h1>Practice. Play. Shop.</h1>
+          <p>
+            The one stop shop for everything golf—heated year-round range, Toptracer, TrackMan club fitting,
+            repair shop, and miniature golf in Oak Creek, Wisconsin.
+          </p>
+          <div class="hero-actions">
+            <a href="#pricing" class="btn btn-primary">View pricing</a>
+            <a href="/driving-range.html" class="btn btn-ghost">Driving range</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-divider reveal" aria-labelledby="visit-extras-title">
+        <div class="container">
+          <p class="section-kicker">At the facility</p>
+          <h2 id="visit-extras-title" class="section-title">Rewards, specials &amp; passes</h2>
+          <p class="visit-extras-lead">
+            Loyalty at the register, drinks and food at the bar, and seasonal range packages—three things guests
+            often ask about, side by side.
+          </p>
+          <div class="info-trio">
+            <article id="rewards" class="info-trio-card">
+              <p class="info-trio-kicker">Rewards</p>
+              <h3 class="info-trio-title">Earn perks as you play</h3>
+              <p class="info-trio-copy">
+                Ask at the register about range rewards and loyalty details—programs and punch cards can change by
+                season. Staff can walk you through what is running when you visit.
+              </p>
+            </article>
+            <article id="drinks-specials" class="info-trio-card">
+              <p class="info-trio-kicker">Drinks &amp; specials</p>
+              <h3 class="info-trio-title">Beverages and bay-side specials</h3>
+              <p class="info-trio-copy">
+                Drink specials and food options vary by day and season. Check with staff or signage at the bar for
+                today's menu, happy-hour style deals, and what can be brought to your bay.
+              </p>
+            </article>
+            <article id="season-pass" class="info-trio-card">
+              <p class="info-trio-kicker">Season pass</p>
+              <h3 class="info-trio-title">Winter range and seasonal packages</h3>
+              <p class="info-trio-copy">
+                When winter range passes or bundled packages are offered, availability and pricing are confirmed at
+                the desk. Call <a href="tel:+14145717002">(414) 571-7002</a> or ask on your next visit for the
+                current pass lineup.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section courses section-divider reveal" id="experiences">
+        <div class="container">
+          <p class="section-kicker">Our facility</p>
+          <h2 class="section-title">Range, technology, and short game</h2>
+          <p class="section-intro">
+            Range, <a href="/toptracer.html">Toptracer</a>, <a href="/club-fittings.html">club fitting</a> with
+            TrackMan, <a href="/club-repairs.html">club repair</a>, and
+            <a href="/mini-golf.html">mini golf</a>—each has a dedicated page in the header. Lessons are on the
+            <a href="/lessons.html">lessons</a> page.
+          </p>
+          <div class="card-grid">
+            <article class="course-card reveal" style="transition-delay: 0ms">
+              <img
+                src="https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?auto=format&fit=crop&w=1200&q=80"
+                alt="Golfer on a driving range with green targets in the distance"
+              />
+              <div class="card-body">
+                <h3>Premium mats & grass tees</h3>
+                <p>
+                  Thirty-six artificial-grass bays and fifteen grass bays, with mats replaced each season
+                  and divots tended daily. Targets span roughly 25 yards out to 200 and beyond.
+                </p>
+                <a class="learn-link" href="/driving-range.html">Full range details</a>
+              </div>
+            </article>
+
+            <article class="course-card reveal" style="transition-delay: 150ms">
+              <img
+                src="/toptracer-range.png"
+                alt="Toptracer Range display showing shot trajectories, carry and ball speed data, with a guest pointing at the screen in a hitting bay"
+              />
+              <div class="card-body">
+                <h3>Toptracer ball-tracking</h3>
+                <p>
+                  Every shot into the range can be tracked for practice and play modes—including virtual
+                  golf with friends. Sessions are not clock-based, so you can work at your own pace.
+                </p>
+                <a class="learn-link" href="/toptracer.html">Toptracer modes</a>
+              </div>
+            </article>
+
+            <article class="course-card reveal" style="transition-delay: 300ms">
+              <img
+                src="/miniature-golf.png"
+                alt="Miniature golf course with a rocky waterfall, bright green turf, and trees under a partly cloudy sky at Gastrau's Golf Center"
+              />
+              <div class="card-body">
+                <h3>Miniature golf & groups</h3>
+                <p>
+                  A memorable mini-golf layout with water in play on nearly every hole. Range ends include
+                  couches, Toptracer, and large TVs—each bay fits up to about four guests comfortably.
+                </p>
+                <a class="learn-link" href="/mini-golf.html">Mini golf details</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section legacy section-divider reveal" id="pricing">
+        <div class="container">
+          <p class="section-kicker">Pricing</p>
+          <h2 class="section-title">Driving range & mini golf</h2>
+          <p class="section-intro">
+            Standard bay bucket sizes and Toptracer add-ons match our public driving-range board. Miniature
+            golf rates are available at the register; hours for the course are listed below.
+          </p>
+          <div class="pricing-grid">
+            <article class="price-table reveal">
+              <h3>Standard bay buckets</h3>
+              <div class="price-row"><span>Small (40 balls)</span><strong>$8</strong></div>
+              <div class="price-row"><span>Medium (70 balls)</span><strong>$11</strong></div>
+              <div class="price-row"><span>Large (100 balls)</span><strong>$14</strong></div>
+            </article>
+            <article class="price-table reveal">
+              <h3>With Toptracer (total)</h3>
+              <div class="price-row"><span>Small bucket + Toptracer</span><strong>$9</strong></div>
+              <div class="price-row"><span>Medium bucket + Toptracer</span><strong>$14</strong></div>
+              <div class="price-row"><span>Large bucket + Toptracer</span><strong>$19</strong></div>
+              <div class="price-row"><span>Add-on only (small / med / large)</span><strong>+$1 / +$3 / +$5</strong></div>
+            </article>
+            <article class="price-table reveal">
+              <h3>Miniature golf</h3>
+              <div class="price-row"><span>Open daily (course)</span><strong>9 am – 10 pm</strong></div>
+              <div class="price-row"><span>Per-player rates</span><strong>At register</strong></div>
+              <div class="price-row"><span>Putter damaged through misuse</span><strong>$15 replace</strong></div>
+              <div class="price-row"><span>Birthday parties & events</span><strong>See contact</strong></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-divider reveal" id="hours">
+        <div class="container">
+          <p class="section-kicker">Hours & Policies</p>
+          <h2 class="section-title">Weekly hours and visit guidelines</h2>
+          <p class="section-intro left">
+            Gastrau's Golf Center operates year-round in Oak Creek. Hours below reflect our public posted
+            schedule; outdoor areas may vary with weather.
+          </p>
+
+          <div class="info-grid">
+            <article class="info-card reveal">
+              <h3>Facility hours</h3>
+              <ul>
+                <li><strong>Monday:</strong> 10 am – 9 pm</li>
+                <li><strong>Tuesday – Friday:</strong> 10 am – 10 pm</li>
+                <li><strong>Saturday:</strong> 9 am – 10 pm</li>
+                <li><strong>Sunday:</strong> 9 am – 9 pm</li>
+                <li><strong>Miniature golf:</strong> 9 am – 10 pm daily (posted on site)</li>
+              </ul>
+            </article>
+            <article class="info-card reveal">
+              <h3>Range & practice</h3>
+              <ul>
+                <li>Heated hitting options support winter practice; confirm seasonal setup when you call.</li>
+                <li>Finish balls and return rental equipment by closing or as directed by staff.</li>
+                <li>Follow all posted safety rules in bays and on walkways near active flight.</li>
+                <li>Toptracer bays are ideal for small groups—plan extra time for larger parties.</li>
+              </ul>
+            </article>
+            <article class="info-card reveal">
+              <h3>Events & group outings</h3>
+              <ul>
+                <li>Birthday inquiries: contact birthday coordinator Katie Gastrau (see email below).</li>
+                <li>Corporate outings, field trips, fundraisers: use the form or call the main line.</li>
+                <li>Large groups should confirm date, headcount, and timing before arrival.</li>
+                <li>Beverages and food options vary; ask staff what is available during your visit.</li>
+              </ul>
+            </article>
+            <article class="info-card reveal">
+              <h3>Guest conduct</h3>
+              <ul>
+                <li>Children and teens should be supervised by a responsible adult.</li>
+                <li>Respect staff directions and other guests; keep pace where bays are shared.</li>
+                <li>Mini-golf putters must be used as intended—misuse may incur a replacement fee.</li>
+                <li>Questions about weather or bay availability? Call before you make the trip.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-divider reveal" id="about">
+        <div class="container">
+          <p class="section-kicker">Our story</p>
+          <h2 class="section-title">Milwaukee-area golf under one roof</h2>
+          <p class="section-intro left">
+            Founded in 1998 as a focused practice facility, Gastrau's Golf Center grew into a
+            year-round destination with heated bays, club building and repair, retail, and technology like
+            Toptracer—still rooted in hands-on service for every golfer.
+          </p>
+          <div class="owner-grid">
+            <article class="owner-card reveal">
+              <h3>Steve Gastrau</h3>
+              <p>Owner and certified club builder; leads the shop's technical standards and long-term vision.</p>
+            </article>
+            <article class="owner-card reveal">
+              <h3>Brent Gastrau</h3>
+              <p>General manager; day-to-day operations, guest experience, and staff coordination.</p>
+            </article>
+            <article class="owner-card reveal">
+              <h3>Katie Gastrau</h3>
+              <p>Birthday and events coordinator; helps families and groups plan celebrations and outings.</p>
+            </article>
+          </div>
+          <div class="info-grid">
+            <article class="info-card reveal">
+              <h3>Practice and play</h3>
+              <p>
+                From premium range balls and maintained tees to Toptracer games and virtual rounds, the
+                facility is designed so practice feels engaging—not rushed—and translates to better golf
+                on the course.
+              </p>
+            </article>
+            <article class="info-card reveal">
+              <h3>Fit, repair, shop</h3>
+              <p>
+                Custom fitting, re-gripping, reshafting, and equipment sales support players who want gear
+                matched to their swing. Ask in the shop for TrackMan, demo days, and lesson options.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section pull-quote section-divider reveal">
+        <div class="container">
+          <blockquote>
+            "Premium hitting areas, premium golf balls, and a great all-around facility to make golf fun."
+          </blockquote>
+          <p>
+            How we think about the summer range experience at Gastrau's Golf Center—welcoming every skill
+            level with realistic practice and room to enjoy the game.
+          </p>
+        </div>
+      </section>
+
+      <section class="section contact-form-section section-divider reveal" id="contact-form">
+        <div class="container">
+          <p class="section-kicker">Contact</p>
+          <h2 class="section-title">Send a message or event request</h2>
+          <p class="section-intro left">
+            Use this form for general questions, group outings, or outings that need coordination. For
+            birthday parties, you can also reach our birthday coordinator directly at
+            <a href="mailto:gastrauevents@gmail.com">gastrauevents@gmail.com</a>.
+          </p>
+          <p class="section-intro left">
+            <strong>Prefer the phone?</strong> Call <a href="tel:+14145717002">(414) 571-7002</a> during
+            posted hours.
+          </p>
+
+          <div class="form-shell">
+            <form class="contact-form" action="#" method="post">
+              <div class="form-field">
+                <label for="fullName">Name</label>
+                <input id="fullName" name="fullName" type="text" autocomplete="name" required />
+              </div>
+
+              <div class="form-field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" required />
+              </div>
+
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+
+              <div class="form-field">
+                <label for="eventDate">Event Date</label>
+                <input id="eventDate" name="eventDate" type="date" />
+              </div>
+
+              <div class="form-field">
+                <label for="eventType">Event Type</label>
+                <select id="eventType" name="eventType">
+                  <option value="">Select one</option>
+                  <option>Birthday party</option>
+                  <option>Church group</option>
+                  <option>Corporate outing</option>
+                  <option>Field trip</option>
+                  <option>Fundraiser</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="eventHours">Event Hours</label>
+                <input id="eventHours" name="eventHours" type="text" placeholder="Example: 2 pm - 5 pm" />
+              </div>
+
+              <div class="form-field">
+                <label for="guestCount">Number of Guests</label>
+                <input id="guestCount" name="guestCount" type="number" min="1" />
+              </div>
+
+              <div class="form-field">
+                <label for="ageRange">Age Range of Guests</label>
+                <input id="ageRange" name="ageRange" type="text" placeholder="Example: 12-16" />
+              </div>
+
+              <div class="form-field full">
+                <label for="details">Additional Details</label>
+                <textarea id="details" name="details" rows="5"></textarea>
+              </div>
+
+              <div class="form-field full">
+                <button class="btn btn-primary form-submit" type="submit">Send Booking Request</button>
+              </div>
+            </form>
+            <p class="form-note">
+              General manager: Brent Gastrau. Main email:
+              <a href="mailto:gastrausmanager@gmail.com">gastrausmanager@gmail.com</a>. Address:
+              1300 E. Rawson Avenue, Oak Creek, WI 53154.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="container">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <img
+              class="footer-logo"
+              src="/logo-gastrau-golf-center.png"
+              width="120"
+              height="120"
+              alt=""
+              decoding="async"
+            />
+            <div class="footer-brand-text">
+              <h2>Gastrau's Golf Center</h2>
+              <p class="footer-tagline">
+                Range, Toptracer, mini golf, lessons, fitting, and repair—just east of I-41, Oak Creek.
+              </p>
+            </div>
+          </div>
+
+          <nav class="footer-nav-col" aria-label="Facility">
+            <h3 class="footer-title">Facility</h3>
+            <ul class="footer-list">
+              <li><a href="/driving-range.html">Driving range</a></li>
+              <li><a href="/toptracer.html">Toptracer</a></li>
+              <li><a href="/club-fittings.html">Club fitting</a></li>
+              <li><a href="/club-repairs.html">Club repair</a></li>
+              <li><a href="/mini-golf.html">Mini golf</a></li>
+            </ul>
+          </nav>
+
+          <nav class="footer-nav-col" aria-label="Plan your visit">
+            <h3 class="footer-title">Plan</h3>
+            <ul class="footer-list">
+              <li><a href="/lessons.html">Lessons</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+              <li><a href="#hours">Hours</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact-form">Contact</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer-visit">
+            <h3 class="footer-title">Visit</h3>
+            <address class="footer-address">
+              <p>1300 E. Rawson Avenue<br />Oak Creek, WI 53154</p>
+              <p><a href="tel:+14145717002">(414) 571-7002</a></p>
+              <p><a href="mailto:gastrausmanager@gmail.com">gastrausmanager@gmail.com</a></p>
+            </address>
+            <p class="footer-fineprint">Outdoor amenities may close in severe weather.</p>
+          </div>
+        </div>
+
+        <div class="footer-meta">
+          <span>&copy; 2026 Gastrau's Golf Center</span>
+          <span>Oak Creek, Wisconsin</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const siteHeader = document.getElementById("siteHeader");
+      const heroMedia = document.getElementById("heroMedia");
+      const revealElements = document.querySelectorAll(".reveal");
+      const counterElements = document.querySelectorAll("[data-counter]");
+      const legacySection = document.getElementById("pricing");
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobileMenu");
+      let countersStarted = false;
+      let ticking = false;
+
+      const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+      function updateHeaderAndParallax() {
+        const scrolled = window.scrollY > 80;
+        siteHeader.classList.toggle("scrolled", scrolled);
+
+        const offset = Math.min(window.scrollY * 0.25, 160);
+        heroMedia.style.transform = "scale(1.05) translate3d(0, " + offset + "px, 0)";
+        ticking = false;
+      }
+
+      function onScroll() {
+        if (!ticking) {
+          window.requestAnimationFrame(updateHeaderAndParallax);
+          ticking = true;
+        }
+      }
+
+      function animateCounter(el, target, duration) {
+        const startTime = performance.now();
+
+        function tick(now) {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = easeOutCubic(progress);
+          const value = Math.round(eased * target);
+          el.textContent = String(value);
+
+          if (progress < 1) {
+            window.requestAnimationFrame(tick);
+          }
+        }
+
+        window.requestAnimationFrame(tick);
+      }
+
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.14, rootMargin: "0px 0px -40px 0px" }
+      );
+
+      revealElements.forEach((item) => revealObserver.observe(item));
+
+      const counterObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting || countersStarted) return;
+            countersStarted = true;
+            counterElements.forEach((counter) => {
+              const targetValue = Number(counter.dataset.counter || 0);
+              animateCounter(counter, targetValue, 1500);
+            });
+            observer.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.45 }
+      );
+
+      if (legacySection) counterObserver.observe(legacySection);
+
+      function closeMobileMenu() {
+        mobileMenu.classList.remove("open");
+        hamburger.setAttribute("aria-expanded", "false");
+      }
+
+      hamburger.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("open");
+        hamburger.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMobileMenu);
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 760) closeMobileMenu();
+      });
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      updateHeaderAndParallax();
+    </script>
+  </body>
+</html>

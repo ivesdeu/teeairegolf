@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heated driving range | Gastrau's Golf Center | Oak Creek, WI</title>
+    <meta
+      name="description"
+      content="Hit comfortably through Wisconsin winter with infrared heaters, real outdoor ball flight, Toptracer, and premium TaylorMade range balls at Gastrau's Golf Center."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-ivory: #f8f5ef;
+        --surface-white: #fffdf9;
+        --green-deep: #1e3a2f;
+        --text-warm: #2c2c2a;
+        --gold-muted: #b8985a;
+        --hairline: rgba(30, 58, 47, 0.2);
+        --space-sm: 0.875rem;
+        --space-md: 1.25rem;
+        --space-lg: 2rem;
+        --space-xl: 3.5rem;
+        --space-xxl: 6rem;
+        --container: min(1140px, 90vw);
+        --shadow-soft: 0 20px 34px -26px rgba(44, 44, 42, 0.28);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Montserrat", Arial, sans-serif;
+        font-weight: 300;
+        color: var(--text-warm);
+        background: var(--bg-ivory);
+        line-height: 1.65;
+      }
+
+      img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .prose a {
+        color: var(--green-deep);
+        text-decoration: underline;
+        text-underline-offset: 0.15em;
+      }
+
+      .prose a:hover,
+      .prose a:focus-visible {
+        color: #152a22;
+      }
+
+      .learn-link {
+        display: inline-block;
+        margin-top: 0.25rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 0.72rem;
+        color: var(--green-deep);
+        border-bottom: 0.5px solid rgba(30, 58, 47, 0.5);
+        padding-bottom: 0.3rem;
+      }
+
+      .container {
+        width: var(--container);
+        margin: 0 auto;
+      }
+
+      .section {
+        padding: var(--space-xxl) 0;
+      }
+
+      .section-divider {
+        border-top: 0.5px solid var(--hairline);
+      }
+
+      .section-kicker {
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 0.7rem;
+        color: var(--gold-muted);
+        margin-bottom: var(--space-sm);
+      }
+
+      .section-title {
+        margin: 0 0 var(--space-md);
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(2rem, 4vw, 3.35rem);
+        line-height: 1.05;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+      }
+
+      .section-intro {
+        max-width: 62ch;
+        margin: 0;
+        font-size: 1rem;
+        color: rgba(44, 44, 42, 0.84);
+      }
+
+      .section-intro + .section-intro {
+        margin-top: 1rem;
+      }
+
+      .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 50;
+        background: rgba(248, 245, 239, 0.96);
+        border-bottom: 0.5px solid var(--hairline);
+        box-shadow: 0 14px 30px -30px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(7px);
+      }
+
+      .nav-wrap {
+        width: min(1240px, 92vw);
+        margin: 0 auto;
+        padding: 1.1rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-lg);
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 1.75rem;
+        letter-spacing: 0.04em;
+        color: var(--green-deep);
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.1rem 1.6rem;
+        margin: 0;
+        padding: 0;
+        color: rgba(44, 44, 42, 0.9);
+        font-size: 0.85rem;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+
+      .nav-links a {
+        position: relative;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.25rem;
+        width: 100%;
+        height: 0.5px;
+        transform: scaleX(0);
+        transform-origin: left;
+        background: currentColor;
+        transition: transform 200ms ease;
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a:focus-visible::after {
+        transform: scaleX(1);
+      }
+
+      .nav-cta {
+        border: 0.5px solid rgba(30, 58, 47, 0.45);
+        color: var(--green-deep);
+        padding: 0.55rem 1rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        transition: background-color 200ms ease;
+      }
+
+      .nav-cta:hover,
+      .nav-cta:focus-visible {
+        background: rgba(30, 58, 47, 0.08);
+      }
+
+      .page-hero {
+        position: relative;
+        min-height: 38vh;
+        display: grid;
+        align-items: end;
+        padding: 7.5rem 0 3rem;
+        color: #f7f2e8;
+        text-align: left;
+        overflow: hidden;
+        isolation: isolate;
+      }
+
+      .page-hero-media {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(to bottom, rgba(30, 58, 47, 0.55) 0%, rgba(30, 58, 47, 0.72) 100%),
+          url("/hero-image.png");
+        background-size: cover;
+        background-position: center center;
+        z-index: -1;
+      }
+
+      .page-hero h1 {
+        margin: 0 0 0.5rem;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-weight: 500;
+        font-size: clamp(2.2rem, 5vw, 3.6rem);
+        line-height: 1.02;
+        letter-spacing: 0.02em;
+        text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
+      }
+
+      .page-hero p {
+        margin: 0;
+        max-width: 48ch;
+        font-size: 1rem;
+        color: rgba(247, 242, 232, 0.95);
+        text-shadow: 0 1px 12px rgba(0, 0, 0, 0.4);
+      }
+
+      .experiences {
+        background: var(--surface-white);
+      }
+
+      .experience-row {
+        display: grid;
+        grid-template-columns: 1.05fr 1fr;
+        gap: clamp(2rem, 5vw, 5.5rem);
+        align-items: center;
+        padding: 3rem 0;
+        border-bottom: 0.5px solid var(--hairline);
+      }
+
+      .experience-row:first-of-type {
+        border-top: 0.5px solid var(--hairline);
+      }
+
+      .experience-row.reverse {
+        grid-template-columns: 1fr 1.05fr;
+      }
+
+      .experience-row.reverse .experience-media {
+        order: 2;
+      }
+
+      .experience-row.reverse .experience-copy {
+        order: 1;
+      }
+
+      .experience-media img {
+        aspect-ratio: 4 / 3;
+        object-fit: contain;
+        background: #f3f0ea;
+      }
+
+      .experience-media img.cover-fill {
+        object-fit: cover;
+      }
+
+      .experience-copy h2 {
+        margin: 0 0 0.5rem;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+        font-weight: 500;
+        line-height: 1.08;
+      }
+
+      .tech-head {
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 0.72rem;
+        color: var(--gold-muted);
+        margin-bottom: 0.35rem;
+      }
+
+      .experience-copy p {
+        margin: 0 0 0.9rem;
+      }
+
+      .quote-block {
+        margin: 1.25rem 0 1rem;
+        padding: 1rem 0 0;
+        border-top: 0.5px solid var(--hairline);
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+        font-style: italic;
+        line-height: 1.25;
+        color: var(--green-deep);
+      }
+
+      .shout {
+        margin-top: var(--space-xl);
+        padding: 1.25rem 1.5rem;
+        text-align: center;
+        font-size: 0.8rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--green-deep);
+        border: 0.5px solid var(--hairline);
+        background: #f6f2e9;
+      }
+
+      .winter-split {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.92fr);
+        gap: clamp(1.75rem, 4vw, 3.5rem);
+        align-items: center;
+      }
+
+      .winter-copy .section-intro {
+        max-width: none;
+      }
+
+      .winter-media img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border: 0.5px solid var(--hairline);
+        box-shadow: var(--shadow-soft);
+      }
+
+      .site-footer {
+        background: var(--green-deep);
+        color: #f1ebdd;
+        padding: 3.25rem 0 1.85rem;
+      }
+
+      .footer-main {
+        display: grid;
+        grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.95fr) minmax(0, 0.95fr) minmax(0, 1.05fr);
+        gap: 2.25rem 2rem;
+        align-items: start;
+      }
+
+      .footer-brand {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      @media (min-width: 520px) {
+        .footer-brand {
+          flex-direction: row;
+          align-items: flex-start;
+          gap: 1.15rem;
+        }
+      }
+
+      .footer-logo {
+        width: 4rem;
+        height: 4rem;
+        object-fit: contain;
+        border-radius: 50%;
+        background: rgba(255, 253, 249, 0.08);
+        padding: 0.2rem;
+        flex-shrink: 0;
+      }
+
+      .footer-brand-text {
+        min-width: 0;
+      }
+
+      .footer-brand h2 {
+        margin: 0;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(1.65rem, 2.6vw, 2.1rem);
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        line-height: 1.05;
+      }
+
+      .footer-tagline {
+        margin: 0.55rem 0 0;
+        max-width: 36ch;
+        font-size: 0.9rem;
+        line-height: 1.55;
+        color: rgba(241, 235, 221, 0.82);
+      }
+
+      .footer-nav-col {
+        min-width: 0;
+      }
+
+      .footer-title {
+        margin: 0 0 0.75rem;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: rgba(241, 235, 221, 0.78);
+      }
+
+      .footer-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 0.45rem;
+      }
+
+      .footer-list a {
+        font-size: 0.88rem;
+        color: rgba(241, 235, 221, 0.94);
+      }
+
+      .footer-list a:hover,
+      .footer-list a:focus-visible {
+        color: #fff;
+      }
+
+      .footer-visit {
+        min-width: 0;
+      }
+
+      .footer-address {
+        margin: 0;
+        font-style: normal;
+        font-size: 0.88rem;
+        line-height: 1.55;
+        color: rgba(241, 235, 221, 0.88);
+      }
+
+      .footer-address p {
+        margin: 0 0 0.45rem;
+      }
+
+      .footer-address a {
+        color: rgba(241, 235, 221, 0.96);
+      }
+
+      .footer-address a:hover,
+      .footer-address a:focus-visible {
+        color: #fff;
+      }
+
+      .footer-fineprint {
+        margin: 0.85rem 0 0;
+        font-size: 0.72rem;
+        line-height: 1.45;
+        color: rgba(241, 235, 221, 0.55);
+        max-width: 32ch;
+      }
+
+      .footer-meta {
+        margin-top: 2.25rem;
+        padding-top: 1.15rem;
+        border-top: 0.5px solid rgba(241, 235, 221, 0.24);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.65rem 1.25rem;
+        font-size: 0.76rem;
+        color: rgba(241, 235, 221, 0.62);
+      }
+
+      .footer-meta a {
+        color: rgba(241, 235, 221, 0.8);
+      }
+
+      .footer-meta a:hover,
+      .footer-meta a:focus-visible {
+        color: #fff;
+      }
+
+      @media (max-width: 960px) {
+        .footer-main {
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem 1.5rem;
+        }
+
+        .footer-brand {
+          grid-column: 1 / -1;
+        }
+
+        .footer-visit {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .footer-main {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 650ms ease, transform 650ms ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 960px) {
+        .experience-row,
+        .experience-row.reverse {
+          grid-template-columns: 1fr;
+          gap: 1.6rem;
+        }
+
+        .experience-row.reverse .experience-media,
+        .experience-row.reverse .experience-copy {
+          order: initial;
+        }
+
+        .winter-split {
+          grid-template-columns: 1fr;
+          gap: var(--space-lg);
+        }
+
+        .winter-media {
+          order: -1;
+        }
+      }
+
+      @media (max-width: 760px) {
+        :root {
+          --space-xxl: 4.5rem;
+        }
+
+        .page-hero {
+          padding-top: 6.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a href="/index.html" class="logo">Gastrau's Golf Center</a>
+        <ul class="nav-links">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/driving-range.html">Driving range</a></li>
+          <li><a href="/toptracer.html">Toptracer</a></li>
+          <li><a href="/club-fittings.html">Club fitting</a></li>
+          <li><a href="/club-repairs.html">Club repair</a></li>
+          <li><a href="/mini-golf.html">Mini golf</a></li>
+        </ul>
+        <a class="nav-cta" href="/index.html#contact-form">Contact</a>
+      </div>
+    </header>
+
+    <main>
+      <header class="page-hero" id="top">
+        <div class="page-hero-media" aria-hidden="true"></div>
+        <div class="container reveal">
+          <h1>Heated driving range</h1>
+          <p>Real ball flight outdoors, serious warmth from infrared heaters, and Wisconsin-proof practice all winter long.</p>
+        </div>
+      </header>
+
+      <section class="section section-divider reveal" id="winter">
+        <div class="container">
+          <div class="winter-split">
+            <div class="winter-copy prose">
+              <p class="section-kicker">Winter practice</p>
+              <h2 class="section-title">Hit comfortably outside</h2>
+              <p class="section-intro">
+                Golf is hard, especially if you are taking four months off every winter. Why stop if you can
+                hit comfortably outside?
+              </p>
+              <p class="section-intro">
+                Our goal throughout winter is to give you the most comfortable and realistic practice during
+                the off-season. That means fewer layers while still seeing real ball flight outdoors underneath
+                our toasty heaters.
+              </p>
+              <p class="section-intro">
+                We have individual infrared heaters pushing out enough heat to keep you warm even in frigid
+                Wisco temperatures down into the single digits.
+              </p>
+              <p class="section-intro">
+                Not to mention, we have back heaters that keep golfers waiting to hit warm and cozy.
+              </p>
+            </div>
+            <div class="winter-media">
+              <img
+                src="/winter-range-practice.png"
+                alt="Golfer at the top of the backswing on a sunny day at the outdoor range: covered bay, green turf mat, targets and trees in the distance under a clear blue sky"
+              />
+            </div>
+          </div>
+          <p class="shout">Always hit in comfort.</p>
+        </div>
+      </section>
+
+      <section class="section experiences section-divider reveal" id="toptracer">
+        <div class="container">
+          <div class="experience-row">
+            <div class="experience-media">
+              <img
+                src="/toptracer-screen-clubs-transparent.png"
+                alt="Toptracer screen beside golf clubs in a heated hitting bay"
+              />
+            </div>
+            <div class="experience-copy prose">
+              <p class="tech-head">Toptracer · Ball-tracking · Technology</p>
+              <h2>Feedback you can trust</h2>
+              <p class="quote-block">
+                "An extremely versatile system that allows for anything from statistical analysis to playing
+                a round of golf."
+              </p>
+              <p>
+                Toptracer allows for each shot hit to be traced with extremely accurate feedback within a
+                yard of actual flight.
+              </p>
+              <p>
+                Use it to figure out the strengths and weaknesses of your game, play rounds of golf with
+                friends, or even figure out the yardages of your bag.
+              </p>
+              <p>
+                The best part is that there is no time limit to finish, unlike most simulators.
+              </p>
+              <p><a class="learn-link" href="/toptracer.html">All Toptracer modes &amp; features</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section experiences section-divider reveal" id="range-balls">
+        <div class="container">
+          <div class="experience-row reverse">
+            <div class="experience-media">
+              <img
+                class="cover-fill"
+                src="/taylormade-range-balls.png"
+                alt="Premium TaylorMade range balls at Gastrau's Golf Center"
+              />
+            </div>
+            <div class="experience-copy prose">
+              <p class="section-kicker">Equipment</p>
+              <h2>Premium range balls &amp; artificial turf</h2>
+              <p>
+                With over 80,000 premium TaylorMade range balls, ball flight and distances translate to the
+                course. No limited flight, so you can trust the results.
+              </p>
+              <p>
+                Our artificial hitting mats are replaced yearly as well, so you are hitting off the most
+                realistic and shock-absorptive surface we can offer.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <img
+              class="footer-logo"
+              src="/logo-gastrau-golf-center.png"
+              width="120"
+              height="120"
+              alt=""
+              decoding="async"
+            />
+            <div class="footer-brand-text">
+              <h2>Gastrau's Golf Center</h2>
+              <p class="footer-tagline">
+                Range, Toptracer, mini golf, lessons, fitting, and repair—Oak Creek, WI.
+              </p>
+            </div>
+          </div>
+
+          <nav class="footer-nav-col" aria-label="Facility">
+            <h3 class="footer-title">Facility</h3>
+            <ul class="footer-list">
+              <li><a href="/driving-range.html">Driving range</a></li>
+              <li><a href="/toptracer.html">Toptracer</a></li>
+              <li><a href="/club-fittings.html">Club fitting</a></li>
+              <li><a href="/club-repairs.html">Club repair</a></li>
+              <li><a href="/mini-golf.html">Mini golf</a></li>
+            </ul>
+          </nav>
+
+          <nav class="footer-nav-col" aria-label="Plan your visit">
+            <h3 class="footer-title">Plan</h3>
+            <ul class="footer-list">
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/lessons.html">Lessons</a></li>
+              <li><a href="/index.html#pricing">Pricing</a></li>
+              <li><a href="/index.html#hours">Hours</a></li>
+              <li><a href="/index.html#about">About</a></li>
+              <li><a href="/index.html#contact-form">Contact</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer-visit">
+            <h3 class="footer-title">Visit</h3>
+            <address class="footer-address">
+              <p>1300 E. Rawson Avenue<br />Oak Creek, WI 53154</p>
+              <p><a href="tel:+14145717002">(414) 571-7002</a></p>
+              <p><a href="mailto:gastrausmanager@gmail.com">gastrausmanager@gmail.com</a></p>
+            </address>
+            <p class="footer-fineprint">Outdoor amenities may close in severe weather.</p>
+          </div>
+        </div>
+        <div class="footer-meta">
+          <span>&copy; 2026 Gastrau's Golf Center</span>
+          <span><a href="/index.html">Back to home</a></span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const revealElements = document.querySelectorAll(".reveal");
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      );
+      revealElements.forEach((item) => revealObserver.observe(item));
+    </script>
+  </body>
+</html>

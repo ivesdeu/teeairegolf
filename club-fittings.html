@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Club fitting | Gastrau's Golf Center | Oak Creek, WI</title>
+    <meta
+      name="description"
+      content="Outdoor TrackMan club fittings at Gastrau's Golf Center—driver, woods, hybrids, irons, wedges, and full bag. Oak Creek, Wisconsin."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-ivory: #f8f5ef;
+        --surface-white: #fffdf9;
+        --green-deep: #1e3a2f;
+        --text-warm: #2c2c2a;
+        --gold-muted: #b8985a;
+        --hairline: rgba(30, 58, 47, 0.2);
+        --space-md: 1.25rem;
+        --space-lg: 2rem;
+        --space-xl: 3.5rem;
+        --space-xxl: 6rem;
+        --container: min(1140px, 90vw);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Montserrat", Arial, sans-serif;
+        font-weight: 300;
+        color: var(--text-warm);
+        background: var(--bg-ivory);
+        line-height: 1.65;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .prose a {
+        color: var(--green-deep);
+        text-decoration: underline;
+        text-underline-offset: 0.15em;
+      }
+      .container {
+        width: var(--container);
+        margin: 0 auto;
+      }
+      .section {
+        padding: var(--space-xxl) 0;
+      }
+      .section-divider {
+        border-top: 0.5px solid var(--hairline);
+      }
+      .section-kicker {
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 0.7rem;
+        color: var(--gold-muted);
+        margin-bottom: 0.75rem;
+      }
+      .section-title {
+        margin: 0 0 var(--space-md);
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        font-weight: 500;
+        line-height: 1.05;
+      }
+      .section-intro {
+        max-width: 68ch;
+        margin: 0 0 1rem;
+        font-size: 1rem;
+        color: rgba(44, 44, 42, 0.86);
+      }
+      .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 50;
+        background: rgba(248, 245, 239, 0.96);
+        border-bottom: 0.5px solid var(--hairline);
+        box-shadow: 0 14px 30px -30px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(7px);
+      }
+      .nav-wrap {
+        width: min(1240px, 92vw);
+        margin: 0 auto;
+        padding: 1.1rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-lg);
+        flex-wrap: wrap;
+      }
+      .logo {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 1.75rem;
+        color: var(--green-deep);
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem 1.25rem;
+        margin: 0;
+        padding: 0;
+        font-size: 0.8rem;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: rgba(44, 44, 42, 0.9);
+      }
+      .nav-cta {
+        border: 0.5px solid rgba(30, 58, 47, 0.45);
+        color: var(--green-deep);
+        padding: 0.55rem 1rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+      }
+      .page-hero {
+        position: relative;
+        min-height: 38vh;
+        display: grid;
+        align-items: end;
+        padding: 7.5rem 0 2.5rem;
+        color: #f7f2e8;
+        isolation: isolate;
+      }
+      .page-hero-media {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(to bottom, rgba(30, 58, 47, 0.55) 0%, rgba(30, 58, 47, 0.75) 100%),
+          url("/hero-image.png");
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+      }
+      .page-hero h1 {
+        margin: 0 0 0.4rem;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-weight: 500;
+        font-size: clamp(2rem, 4.5vw, 3.2rem);
+        text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
+      }
+      .page-hero p {
+        margin: 0;
+        max-width: 52ch;
+        font-size: 0.98rem;
+        color: rgba(247, 242, 232, 0.95);
+      }
+      .highlight-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin: var(--space-xl) 0;
+      }
+      .highlight {
+        background: var(--surface-white);
+        border: 0.5px solid var(--hairline);
+        padding: 1rem 1.1rem;
+        font-size: 0.85rem;
+        text-align: center;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--green-deep);
+      }
+      .panel {
+        background: var(--surface-white);
+        border: 0.5px solid var(--hairline);
+        padding: 1.35rem 1.25rem;
+        margin-bottom: var(--space-lg);
+      }
+      .panel h2 {
+        margin: 0 0 0.75rem;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 1.75rem;
+        color: var(--green-deep);
+      }
+      .panel p {
+        margin: 0 0 0.75rem;
+        max-width: 72ch;
+      }
+      .panel p:last-child {
+        margin-bottom: 0;
+      }
+      .review {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 0.5px solid var(--hairline);
+        font-size: 0.95rem;
+      }
+      .review cite {
+        display: block;
+        margin-top: 0.5rem;
+        font-style: normal;
+        font-size: 0.85rem;
+        color: rgba(44, 44, 42, 0.7);
+      }
+      .site-footer {
+        background: var(--green-deep);
+        color: #f1ebdd;
+        padding: 3.25rem 0 1.85rem;
+      }
+      .footer-main {
+        display: grid;
+        grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.95fr) minmax(0, 0.95fr) minmax(0, 1.05fr);
+        gap: 2.25rem 2rem;
+        align-items: start;
+      }
+      .footer-brand {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      @media (min-width: 520px) {
+        .footer-brand {
+          flex-direction: row;
+          align-items: flex-start;
+          gap: 1.15rem;
+        }
+      }
+      .footer-logo {
+        width: 4rem;
+        height: 4rem;
+        object-fit: contain;
+        border-radius: 50%;
+        background: rgba(255, 253, 249, 0.08);
+        padding: 0.2rem;
+        flex-shrink: 0;
+      }
+      .footer-brand-text {
+        min-width: 0;
+      }
+      .footer-brand h2 {
+        margin: 0;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(1.65rem, 2.6vw, 2.1rem);
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        line-height: 1.05;
+      }
+      .footer-tagline {
+        margin: 0.55rem 0 0;
+        max-width: 36ch;
+        font-size: 0.9rem;
+        line-height: 1.55;
+        color: rgba(241, 235, 221, 0.82);
+      }
+      .footer-nav-col {
+        min-width: 0;
+      }
+      .footer-title {
+        margin: 0 0 0.75rem;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: rgba(241, 235, 221, 0.78);
+      }
+      .footer-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 0.45rem;
+      }
+      .footer-list a {
+        font-size: 0.88rem;
+        color: rgba(241, 235, 221, 0.94);
+      }
+      .footer-list a:hover,
+      .footer-list a:focus-visible {
+        color: #fff;
+      }
+      .footer-visit {
+        min-width: 0;
+      }
+      .footer-address {
+        margin: 0;
+        font-style: normal;
+        font-size: 0.88rem;
+        line-height: 1.55;
+        color: rgba(241, 235, 221, 0.88);
+      }
+      .footer-address p {
+        margin: 0 0 0.45rem;
+      }
+      .footer-address a {
+        color: rgba(241, 235, 221, 0.96);
+      }
+      .footer-address a:hover,
+      .footer-address a:focus-visible {
+        color: #fff;
+      }
+      .footer-fineprint {
+        margin: 0.85rem 0 0;
+        font-size: 0.72rem;
+        line-height: 1.45;
+        color: rgba(241, 235, 221, 0.55);
+        max-width: 32ch;
+      }
+      .footer-meta {
+        margin-top: 2.25rem;
+        padding-top: 1.15rem;
+        border-top: 0.5px solid rgba(241, 235, 221, 0.24);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.65rem 1.25rem;
+        font-size: 0.76rem;
+        color: rgba(241, 235, 221, 0.62);
+      }
+      .footer-meta a {
+        color: rgba(241, 235, 221, 0.8);
+      }
+      .footer-meta a:hover,
+      .footer-meta a:focus-visible {
+        color: #fff;
+      }
+      @media (max-width: 960px) {
+        .footer-main {
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem 1.5rem;
+        }
+        .footer-brand {
+          grid-column: 1 / -1;
+        }
+        .footer-visit {
+          grid-column: 1 / -1;
+        }
+      }
+      @media (max-width: 520px) {
+        .footer-main {
+          grid-template-columns: 1fr;
+        }
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 600ms ease, transform 600ms ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      @media (max-width: 760px) {
+        .page-hero {
+          padding-top: 6.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a href="/index.html" class="logo">Gastrau's Golf Center</a>
+        <ul class="nav-links">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/driving-range.html">Driving range</a></li>
+          <li><a href="/toptracer.html">Toptracer</a></li>
+          <li><a href="/club-fittings.html">Club fitting</a></li>
+          <li><a href="/club-repairs.html">Club repair</a></li>
+          <li><a href="/mini-golf.html">Mini golf</a></li>
+        </ul>
+        <a class="nav-cta" href="/index.html#contact-form">Contact</a>
+      </div>
+    </header>
+
+    <main>
+      <header class="page-hero">
+        <div class="page-hero-media" aria-hidden="true"></div>
+        <div class="container reveal">
+          <h1>Get fit &amp; lower your scores</h1>
+          <p>Outdoor fittings with TrackMan, real ball flight, and no rushed clock—call to schedule.</p>
+        </div>
+      </header>
+
+      <section class="section section-divider reveal">
+        <div class="container prose">
+          <p class="section-kicker">Club fitting</p>
+          <h2 class="section-title">The GGC difference</h2>
+          <p class="section-intro">
+            We treat every fitting with serious attention—no rushed clock—so you leave with the best possible
+            build for your swing. Learn more about the process below, and please call if you would like to
+            schedule the same day.
+          </p>
+          <div class="highlight-row">
+            <div class="highlight">Outdoor fittings with Chrome Tour golf balls</div>
+            <div class="highlight">Real ball flight &amp; TrackMan backed data</div>
+            <div class="highlight">Guaranteed price matching*</div>
+            <div class="highlight">Free fitting with purchase of clubs</div>
+          </div>
+          <p class="section-intro">
+            Behind every technological advancement there are millions of data points backing the research—your bag
+            deserves the same rigor. Most fittings are done indoors into a screen elsewhere; at GGC, fittings are
+            <strong>outdoors</strong> (with powerful heaters in cold months) so you see actual ball flight that
+            backs up TrackMan with <strong>Chrome Tour</strong> golf balls for the most accurate feedback. Grass
+            fittings are available when the weather cooperates.
+          </p>
+          <p class="section-intro">
+            <strong>Booking:</strong> the public site lists club fitting at about <strong>1 hr / $75</strong>—confirm
+            current rates and availability when you call <a href="tel:+14145717002">(414) 571-7002</a>.
+          </p>
+
+          <div class="panel" style="margin-top: var(--space-xl)">
+            <h2>TrackMan</h2>
+            <p>
+              TrackMan is one of the industry leaders for accurate swing and ball-tracking data. With this
+              technology we can measure hundreds of parameters in your golf swing to find the right shaft and
+              clubhead combination.
+            </p>
+            <p>
+              All of that data—and the fine-tuning that follows—supports our number one goal: <strong>lower scores
+              and more fun</strong>. The best part is you can watch the ball fly to reaffirm what the numbers say,
+              because fittings are done outside, not into a simulator screen.
+            </p>
+          </div>
+
+          <div class="panel">
+            <h2>Who should get fit?</h2>
+            <p>
+              While a fitting can help nearly all skill levels, a few exceptions matter. If you are unsure, read on
+              or reach out before you book.
+            </p>
+            <h3 style="margin: 1.25rem 0 0.5rem; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-muted)">Golfers who should</h3>
+            <ul style="margin: 0 0 1rem; padding-left: 1.15rem">
+              <li>
+                <strong>Consistent enough contact.</strong> You do not need a tour swing—occasional mishits are
+                normal. If you are generally making solid contact and not living with extreme tops, severe duck
+                hooks on every swing, etc., you are in a good place to get fit. Those swing issues are usually
+                better handled with <a href="/lessons.html">lessons</a> first.
+              </li>
+              <li>
+                <strong>Recently practicing or playing.</strong> If you have not hit a ball in six months, consider
+                a few range sessions or rounds first so we fit your “in-season” swing—not a rusty move that may
+                change after a week back in golf.
+              </li>
+              <li>
+                <strong>Working to improve.</strong> If you still have inconsistency but you are with a coach or
+                practicing on a plan, we can still point you in a helpful direction; results may be less dramatic
+                in one session, but the right specs pay off over time.
+              </li>
+            </ul>
+            <h3 style="margin: 0 0 0.5rem; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-muted)">Golfers who should wait</h3>
+            <ul style="margin: 0; padding-left: 1.15rem">
+              <li>
+                <strong>Severe contact struggles.</strong> If you rarely get the ball airborne or fight extreme
+                mishits every swing, lessons usually come first. We can still help with sizing for height, speed,
+                and ability, but dial-in fitting works best once contact is more stable.
+              </li>
+            </ul>
+            <p style="margin-top: 1rem">
+              Unsure if this is right for you? Email Brent at
+              <a href="mailto:brent@ggcgolf.com?subject=Club%20Fitting%20Inquiry">brent@ggcgolf.com</a>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-divider reveal">
+        <div class="container">
+          <div class="panel">
+            <h2>Types of fittings</h2>
+            <p>
+              <strong>Driver &amp; woods:</strong> optimize launch, spin, smash, and ball speed while keeping you
+              in play off the tee. Fairway woods bridge the gap to your longest iron or hybrid.
+            </p>
+            <p>
+              <strong>Hybrids:</strong> versatile gapping clubs—focus on landing angle, spin, and distance for
+              long approaches and trouble shots.
+            </p>
+            <p>
+              <strong>Irons &amp; wedges:</strong> lie, length, launch, landing angle, and spin so distances are
+              predictable and wedges stop on the green.
+            </p>
+            <p>
+              <strong>Full bag:</strong> can be completed in one visit, but splitting into multiple sessions is
+              recommended to avoid fatigue skewing results. Expect roughly three hours if you insist on a single
+              marathon session.
+            </p>
+          </div>
+
+          <div class="panel">
+            <h2>Brands &amp; custom builds</h2>
+            <p>
+              TaylorMade, Cobra, Callaway, Ping, Tour Edge, Mizuno, and Wilson Staff are highlighted on site.
+              Most iron fittings are custom ordered; a wide selection of in-stock clubs is also available. Browse
+              the online store at <a href="http://ggcgolf.com/" target="_blank" rel="noopener noreferrer">ggcgolf.com</a>.
+            </p>
+            <p style="font-size: 0.88rem; color: rgba(44, 44, 42, 0.72)">
+              *Price matching applies to reputable sources; exclusions often include random online marketplaces and
+              certain MAP-protected brands—ask staff for details.
+            </p>
+          </div>
+
+          <div class="panel">
+            <h2>What golfers say</h2>
+            <blockquote class="review">
+              “Brent made the whole fitting super easy with plenty of options—I would recommend Gastrau's to
+              anybody looking to have a fitting done.”
+              <cite>— Robert Decker</cite>
+            </blockquote>
+            <blockquote class="review">
+              “The best driving range in the area… Brent and Steve are some of the best fitters I have ever had.
+              Super friendly staff and solid selection of drinks and gear.”
+              <cite>— Michael Kirchmeier</cite>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <img
+              class="footer-logo"
+              src="/logo-gastrau-golf-center.png"
+              width="120"
+              height="120"
+              alt=""
+              decoding="async"
+            />
+            <div class="footer-brand-text">
+              <h2>Gastrau's Golf Center</h2>
+              <p class="footer-tagline">
+                Range, Toptracer, mini golf, lessons, fitting, and repair—Oak Creek, WI.
+              </p>
+            </div>
+          </div>
+
+          <nav class="footer-nav-col" aria-label="Facility">
+            <h3 class="footer-title">Facility</h3>
+            <ul class="footer-list">
+              <li><a href="/driving-range.html">Driving range</a></li>
+              <li><a href="/toptracer.html">Toptracer</a></li>
+              <li><a href="/club-fittings.html">Club fitting</a></li>
+              <li><a href="/club-repairs.html">Club repair</a></li>
+              <li><a href="/mini-golf.html">Mini golf</a></li>
+            </ul>
+          </nav>
+
+          <nav class="footer-nav-col" aria-label="Plan your visit">
+            <h3 class="footer-title">Plan</h3>
+            <ul class="footer-list">
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/lessons.html">Lessons</a></li>
+              <li><a href="/index.html#pricing">Pricing</a></li>
+              <li><a href="/index.html#hours">Hours</a></li>
+              <li><a href="/index.html#about">About</a></li>
+              <li><a href="/index.html#contact-form">Contact</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer-visit">
+            <h3 class="footer-title">Visit</h3>
+            <address class="footer-address">
+              <p>1300 E. Rawson Avenue<br />Oak Creek, WI 53154</p>
+              <p><a href="tel:+14145717002">(414) 571-7002</a></p>
+              <p><a href="mailto:gastrausmanager@gmail.com">gastrausmanager@gmail.com</a></p>
+            </address>
+            <p class="footer-fineprint">Outdoor amenities may close in severe weather.</p>
+          </div>
+        </div>
+        <div class="footer-meta">
+          <span>&copy; 2026 Gastrau's Golf Center</span>
+          <span><a href="/index.html">Back to home</a></span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const revealElements = document.querySelectorAll(".reveal");
+      const obs = new IntersectionObserver(
+        (entries, o) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              o.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -36px 0px" }
+      );
+      revealElements.forEach((el) => obs.observe(el));
+    </script>
+  </body>
+</html>

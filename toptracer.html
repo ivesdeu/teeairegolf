@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toptracer | Gastrau's Golf Center | Oak Creek, WI</title>
+    <meta
+      name="description"
+      content="Toptracer ball-tracking at Gastrau's Golf Center—practice modes, virtual golf, games, and no time limits. Oak Creek, Wisconsin."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-ivory: #f8f5ef;
+        --surface-white: #fffdf9;
+        --green-deep: #1e3a2f;
+        --text-warm: #2c2c2a;
+        --gold-muted: #b8985a;
+        --hairline: rgba(30, 58, 47, 0.2);
+        --space-sm: 0.875rem;
+        --space-md: 1.25rem;
+        --space-lg: 2rem;
+        --space-xl: 3.5rem;
+        --space-xxl: 6rem;
+        --container: min(1140px, 90vw);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: "Montserrat", Arial, sans-serif;
+        font-weight: 300;
+        color: var(--text-warm);
+        background: var(--bg-ivory);
+        line-height: 1.65;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .prose a {
+        color: var(--green-deep);
+        text-decoration: underline;
+        text-underline-offset: 0.15em;
+      }
+      .container {
+        width: var(--container);
+        margin: 0 auto;
+      }
+      .section {
+        padding: var(--space-xxl) 0;
+      }
+      .section-divider {
+        border-top: 0.5px solid var(--hairline);
+      }
+      .section-kicker {
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 0.7rem;
+        color: var(--gold-muted);
+        margin-bottom: var(--space-sm);
+      }
+      .section-title {
+        margin: 0 0 var(--space-md);
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(2rem, 4vw, 3.35rem);
+        line-height: 1.05;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+      }
+      .section-intro {
+        max-width: 65ch;
+        margin: 0;
+        font-size: 1rem;
+        color: rgba(44, 44, 42, 0.84);
+      }
+      .section-intro + .section-intro {
+        margin-top: 1rem;
+      }
+      .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 50;
+        background: rgba(248, 245, 239, 0.96);
+        border-bottom: 0.5px solid var(--hairline);
+        box-shadow: 0 14px 30px -30px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(7px);
+      }
+      .nav-wrap {
+        width: min(1240px, 92vw);
+        margin: 0 auto;
+        padding: 1.1rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-lg);
+        flex-wrap: wrap;
+      }
+      .logo {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 1.75rem;
+        letter-spacing: 0.04em;
+        color: var(--green-deep);
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.1rem 1.35rem;
+        margin: 0;
+        padding: 0;
+        color: rgba(44, 44, 42, 0.9);
+        font-size: 0.8rem;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+      .nav-links a {
+        position: relative;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.25rem;
+        width: 100%;
+        height: 0.5px;
+        transform: scaleX(0);
+        transform-origin: left;
+        background: currentColor;
+        transition: transform 200ms ease;
+      }
+      .nav-links a:hover::after,
+      .nav-links a:focus-visible::after {
+        transform: scaleX(1);
+      }
+      .nav-cta {
+        border: 0.5px solid rgba(30, 58, 47, 0.45);
+        color: var(--green-deep);
+        padding: 0.55rem 1rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+      }
+      .page-hero {
+        position: relative;
+        min-height: 40vh;
+        display: grid;
+        align-items: end;
+        padding: 7.5rem 0 3rem;
+        color: #f7f2e8;
+        text-align: left;
+        overflow: hidden;
+        isolation: isolate;
+      }
+      .page-hero-media {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(to bottom, rgba(30, 58, 47, 0.58) 0%, rgba(30, 58, 47, 0.75) 100%),
+          url("/toptracer-range.png");
+        background-size: cover;
+        background-position: center center;
+        z-index: -1;
+      }
+      .page-hero h1 {
+        margin: 0 0 0.5rem;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-weight: 500;
+        font-size: clamp(2.2rem, 5vw, 3.5rem);
+        line-height: 1.02;
+        text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
+      }
+      .page-hero p {
+        margin: 0;
+        max-width: 52ch;
+        font-size: 1rem;
+        color: rgba(247, 242, 232, 0.95);
+        text-shadow: 0 1px 12px rgba(0, 0, 0, 0.4);
+      }
+      .tagline-banner {
+        margin: var(--space-lg) 0 0;
+        padding: 1rem 1.25rem;
+        background: #f6f2e9;
+        border: 0.5px solid var(--hairline);
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(1.35rem, 2.8vw, 2rem);
+        font-style: italic;
+        color: var(--green-deep);
+        text-align: center;
+      }
+      .experiences {
+        background: var(--surface-white);
+      }
+      .info-grid {
+        margin-top: var(--space-xl);
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-lg);
+      }
+      .info-card {
+        background: var(--surface-white);
+        border: 0.5px solid var(--hairline);
+        padding: 1.2rem 1.25rem;
+      }
+      .info-card h3 {
+        margin: 0 0 0.55rem;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 1.45rem;
+        font-weight: 500;
+        line-height: 1.1;
+        color: var(--green-deep);
+      }
+      .info-card p {
+        margin: 0;
+        font-size: 0.94rem;
+        color: rgba(44, 44, 42, 0.88);
+      }
+      .jump-anchor {
+        display: inline-block;
+        margin-top: 0.65rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--green-deep);
+        border-bottom: 0.5px solid rgba(30, 58, 47, 0.45);
+        padding-bottom: 0.25rem;
+      }
+      .vg-lead {
+        max-width: 66ch;
+        margin: 0 0 var(--space-xl);
+        font-size: 1rem;
+        color: rgba(44, 44, 42, 0.86);
+      }
+      .vg-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
+        gap: clamp(1.25rem, 3vw, 2.75rem);
+        align-items: start;
+        margin-bottom: clamp(2.25rem, 4vw, 3.25rem);
+      }
+      .vg-row:last-of-type {
+        margin-bottom: 0;
+      }
+      .vg-row.flip .vg-shot {
+        order: 2;
+      }
+      .vg-row.flip .vg-copy {
+        order: 1;
+      }
+      .vg-shot img {
+        width: 100%;
+        display: block;
+        border: 0.5px solid var(--hairline);
+        box-shadow: 0 22px 44px -30px rgba(0, 0, 0, 0.4);
+      }
+      .vg-copy h3 {
+        margin: 0 0 0.65rem;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 1.65rem;
+        font-weight: 500;
+        color: var(--green-deep);
+      }
+      .vg-copy ul {
+        margin: 0;
+        padding-left: 1.15rem;
+      }
+      .vg-copy li {
+        margin-bottom: 0.5rem;
+      }
+      .site-footer {
+        background: var(--green-deep);
+        color: #f1ebdd;
+        padding: 3.25rem 0 1.85rem;
+      }
+      .footer-main {
+        display: grid;
+        grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.95fr) minmax(0, 0.95fr) minmax(0, 1.05fr);
+        gap: 2.25rem 2rem;
+        align-items: start;
+      }
+      .footer-brand {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      @media (min-width: 520px) {
+        .footer-brand {
+          flex-direction: row;
+          align-items: flex-start;
+          gap: 1.15rem;
+        }
+      }
+      .footer-logo {
+        width: 4rem;
+        height: 4rem;
+        object-fit: contain;
+        border-radius: 50%;
+        background: rgba(255, 253, 249, 0.08);
+        padding: 0.2rem;
+        flex-shrink: 0;
+      }
+      .footer-brand-text {
+        min-width: 0;
+      }
+      .footer-brand h2 {
+        margin: 0;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(1.65rem, 2.6vw, 2.1rem);
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        line-height: 1.05;
+      }
+      .footer-tagline {
+        margin: 0.55rem 0 0;
+        max-width: 36ch;
+        font-size: 0.9rem;
+        line-height: 1.55;
+        color: rgba(241, 235, 221, 0.82);
+      }
+      .footer-nav-col {
+        min-width: 0;
+      }
+      .footer-title {
+        margin: 0 0 0.75rem;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: rgba(241, 235, 221, 0.78);
+      }
+      .footer-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 0.45rem;
+      }
+      .footer-list a {
+        font-size: 0.88rem;
+        color: rgba(241, 235, 221, 0.94);
+      }
+      .footer-list a:hover,
+      .footer-list a:focus-visible {
+        color: #fff;
+      }
+      .footer-visit {
+        min-width: 0;
+      }
+      .footer-address {
+        margin: 0;
+        font-style: normal;
+        font-size: 0.88rem;
+        line-height: 1.55;
+        color: rgba(241, 235, 221, 0.88);
+      }
+      .footer-address p {
+        margin: 0 0 0.45rem;
+      }
+      .footer-address a {
+        color: rgba(241, 235, 221, 0.96);
+      }
+      .footer-address a:hover,
+      .footer-address a:focus-visible {
+        color: #fff;
+      }
+      .footer-fineprint {
+        margin: 0.85rem 0 0;
+        font-size: 0.72rem;
+        line-height: 1.45;
+        color: rgba(241, 235, 221, 0.55);
+        max-width: 32ch;
+      }
+      .footer-meta {
+        margin-top: 2.25rem;
+        padding-top: 1.15rem;
+        border-top: 0.5px solid rgba(241, 235, 221, 0.24);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.65rem 1.25rem;
+        font-size: 0.76rem;
+        color: rgba(241, 235, 221, 0.62);
+      }
+      .footer-meta a {
+        color: rgba(241, 235, 221, 0.8);
+      }
+      .footer-meta a:hover,
+      .footer-meta a:focus-visible {
+        color: #fff;
+      }
+      @media (max-width: 960px) {
+        .footer-main {
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem 1.5rem;
+        }
+        .footer-brand {
+          grid-column: 1 / -1;
+        }
+        .footer-visit {
+          grid-column: 1 / -1;
+        }
+      }
+      @media (max-width: 520px) {
+        .footer-main {
+          grid-template-columns: 1fr;
+        }
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 650ms ease, transform 650ms ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      @media (max-width: 960px) {
+        .info-grid {
+          grid-template-columns: 1fr;
+        }
+        .vg-row,
+        .vg-row.flip {
+          grid-template-columns: 1fr;
+        }
+        .vg-row.flip .vg-shot,
+        .vg-row.flip .vg-copy {
+          order: initial;
+        }
+        .vg-shot {
+          order: -1;
+        }
+      }
+      @media (max-width: 760px) {
+        :root {
+          --space-xxl: 4.5rem;
+        }
+        .page-hero {
+          padding-top: 6.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a href="/index.html" class="logo">Gastrau's Golf Center</a>
+        <ul class="nav-links">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/driving-range.html">Driving range</a></li>
+          <li><a href="/toptracer.html">Toptracer</a></li>
+          <li><a href="/club-fittings.html">Club fitting</a></li>
+          <li><a href="/club-repairs.html">Club repair</a></li>
+          <li><a href="/mini-golf.html">Mini golf</a></li>
+        </ul>
+        <a class="nav-cta" href="/index.html#contact-form">Contact</a>
+      </div>
+    </header>
+
+    <main>
+      <header class="page-hero" id="top">
+        <div class="page-hero-media" aria-hidden="true"></div>
+        <div class="container reveal">
+          <h1>Toptracer</h1>
+          <p>
+            Ball-tracking on the range with practice tools, games, and virtual golf—without a countdown clock on
+            your bay.
+          </p>
+        </div>
+      </header>
+
+      <section class="section section-divider reveal">
+        <div class="container prose">
+          <p class="tagline-banner">"We're changing golf. One shot at a time."</p>
+          <p class="section-kicker">What is Toptracer?</p>
+          <h2 class="section-title">One system, many ways to play and improve</h2>
+          <p class="section-intro">
+            Toptracer is a ball-tracking system that changes how golfers practice—whether you want to play a
+            famous course virtually, compete in a long-drive grid, or study launch data on every shot.
+          </p>
+          <p class="section-intro">
+            Every mode can be used for practice; Toptracer also includes dedicated practice tools that deliver
+            the feedback you need to lower scores. Explore modes below, then visit the range to try them in
+            person.
+          </p>
+        </div>
+      </section>
+
+      <section class="section experiences section-divider reveal" id="practice">
+        <div class="container">
+          <p class="section-kicker">Practice</p>
+          <h2 class="section-title">Built for feedback</h2>
+          <p class="section-intro" style="margin-bottom: 0.5rem">
+            Although every mode can be used as a practice tool, Toptracer offers specific modes designed to give
+            golfers the feedback they need.
+          </p>
+          <div class="info-grid">
+            <article class="info-card">
+              <h3>Warm-up mode</h3>
+              <p>
+                Instant feedback on every shot: total distance, carry, flat carry, ball speed, launch, curve,
+                height, hang time, landing angle, and proximity to target. Turn off roll, view the range map
+                from your bay, and dial in feel before a round.
+              </p>
+            </article>
+            <article class="info-card">
+              <h3>My practice</h3>
+              <p>
+                Builds on Warm-up with running averages per club, plus consistency and accuracy vs. a target line
+                shown as a flag on the range. Use the Toptracer app to save sessions and track progress over time.
+              </p>
+            </article>
+            <article class="info-card">
+              <h3>Toptracer 30</h3>
+              <p>
+                Thirty varied shots—from driver to short wedge—with increasing challenge. The system summarizes
+                strengths and weaknesses, shows results by yardage band, and suggests a handicap based on your
+                performance.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-divider reveal" id="play">
+        <div class="container">
+          <p class="section-kicker">Play</p>
+          <h2 class="section-title">Games and virtual golf</h2>
+          <p class="section-intro" style="margin-bottom: var(--space-md)">
+            From long drive to stroke play on world-famous courses, Toptracer has a game mode for your group—up to
+            about four players per bay, with bays that are not timed like most simulators.
+          </p>
+          <div class="info-grid">
+            <article class="info-card">
+              <h3>Virtual golf</h3>
+              <p>
+                Play iconic courses from the range with up to four people. Choose scramble, match play, or stroke
+                play; set handicaps and tees; and enjoy a relaxed pace on untimed bays.
+              </p>
+              <p><a class="jump-anchor" href="#virtual-golf">How it looks on screen</a></p>
+            </article>
+            <article class="info-card">
+              <h3>Approach shot challenge</h3>
+              <p>
+                Nine approach shots where one miss can cost you—great for dialing mid-irons and wedges under
+                pressure.
+              </p>
+            </article>
+            <article class="info-card">
+              <h3>The points game</h3>
+              <p>
+                Like darts for golf: land closer to the flag (especially from farther out) for more points, with
+                multipliers and the chance to steal points from opponents.
+              </p>
+            </article>
+            <article class="info-card">
+              <h3>Long drive</h3>
+              <p>
+                Swing for the fences inside the grid—the longest shot wins. Facility bragging rights included.
+              </p>
+            </article>
+            <article class="info-card">
+              <h3>Go fish</h3>
+              <p>
+                Team game, twenty shots: any registered shot scores. Great for kids and casual groups—land in the
+                mini pools for the biggest “catches.”
+              </p>
+            </article>
+            <article class="info-card">
+              <h3>Driving challenge</h3>
+              <p>
+                Nine tee shots blending distance and accuracy—one wild drive can tank the card, similar in spirit
+                to the approach challenge.
+              </p>
+            </article>
+            <article class="info-card">
+              <h3>Closest to the pin</h3>
+              <p>
+                Classic nearest-the-flag contests on famous virtual holes—simple, competitive, and fun for all
+                skill levels.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section experiences section-divider reveal" id="virtual-golf">
+        <div class="container">
+          <p class="section-kicker">Virtual golf</p>
+          <h2 class="section-title">What you see in the bay</h2>
+          <p class="vg-lead">
+            Real course graphics, live yardages, and range targets tied to the hole you are playing—here is how
+            two common on-screen layouts work when you tee it up virtually at the range.
+          </p>
+
+          <div class="vg-row">
+            <div class="vg-shot">
+              <img
+                src="/toptracer-virtual-golf-course.png"
+                alt="Toptracer Range virtual golf: Torrey Pines hole view with distance to pin, aim line, overhead map, and player bar"
+              />
+            </div>
+            <div class="vg-copy">
+              <h3>Playing a hole (course view)</h3>
+              <ul>
+                <li>
+                  <strong>To pin</strong> shows remaining distance and elevation change so you can plan carry and
+                  rollout.
+                </li>
+                <li>
+                  <strong>Aim line</strong> on the 3D fairway is where you want the shot to start; when your real
+                  ball on the range starts toward the virtual flag, flight follows that aim line.
+                </li>
+                <li>
+                  <strong>Overhead map</strong> shows green contours and hole strategy—you can adjust aim from
+                  that view as well.
+                </li>
+                <li>
+                  <strong>Flag / yardage ring</strong> in the lower bar is the active target; change it anytime
+                  to move your aiming point.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="vg-row flip">
+            <div class="vg-shot">
+              <img
+                src="/toptracer-virtual-golf-scoring.png"
+                alt="Toptracer Range approach mode with virtual flags on the range, inner scoring circle, and seven score zones legend"
+              />
+            </div>
+            <div class="vg-copy">
+              <h3>Targets on the range (approach / par mode)</h3>
+              <ul>
+                <li>
+                  Only a few real-world range flags appear on screen; <strong>rings around a flag</strong> mean it
+                  is eligible to play toward.
+                </li>
+                <li>
+                  The goal is to land the ball <strong>on the fly</strong> inside the highlighted inner circle
+                  around the chosen flag.
+                </li>
+                <li>
+                  The <strong>score zones</strong> legend maps where the ball finishes to par, bogey, double
+                  bogey, and so on from that distance.
+                </li>
+                <li>
+                  Use <strong>scorecard, rehit, and concede</strong> options plus the game clock to keep league or
+                  casual rounds moving.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-divider reveal" id="app">
+        <div class="container prose">
+          <p class="section-kicker">Off the range</p>
+          <h2 class="section-title">Download the Toptracer app</h2>
+          <p class="section-intro">
+            Save shots from every session, compare to local and global leaderboards, and review trends over time.
+            Download the free Toptracer Range app from the
+            <a href="https://www.toptracer.com/" target="_blank" rel="noopener noreferrer">official Toptracer site</a>
+            before you visit.
+          </p>
+          <p class="section-intro">
+            Ready to hit? Pair this page with our
+            <a href="/driving-range.html">driving range</a> overview for winter bays, buckets, and group space.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <img
+              class="footer-logo"
+              src="/logo-gastrau-golf-center.png"
+              width="120"
+              height="120"
+              alt=""
+              decoding="async"
+            />
+            <div class="footer-brand-text">
+              <h2>Gastrau's Golf Center</h2>
+              <p class="footer-tagline">
+                Range, Toptracer, mini golf, lessons, fitting, and repair—Oak Creek, WI.
+              </p>
+            </div>
+          </div>
+
+          <nav class="footer-nav-col" aria-label="Facility">
+            <h3 class="footer-title">Facility</h3>
+            <ul class="footer-list">
+              <li><a href="/driving-range.html">Driving range</a></li>
+              <li><a href="/toptracer.html">Toptracer</a></li>
+              <li><a href="/club-fittings.html">Club fitting</a></li>
+              <li><a href="/club-repairs.html">Club repair</a></li>
+              <li><a href="/mini-golf.html">Mini golf</a></li>
+            </ul>
+          </nav>
+
+          <nav class="footer-nav-col" aria-label="Plan your visit">
+            <h3 class="footer-title">Plan</h3>
+            <ul class="footer-list">
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/lessons.html">Lessons</a></li>
+              <li><a href="/index.html#pricing">Pricing</a></li>
+              <li><a href="/index.html#hours">Hours</a></li>
+              <li><a href="/index.html#about">About</a></li>
+              <li><a href="/index.html#contact-form">Contact</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer-visit">
+            <h3 class="footer-title">Visit</h3>
+            <address class="footer-address">
+              <p>1300 E. Rawson Avenue<br />Oak Creek, WI 53154</p>
+              <p><a href="tel:+14145717002">(414) 571-7002</a></p>
+              <p><a href="mailto:gastrausmanager@gmail.com">gastrausmanager@gmail.com</a></p>
+            </address>
+            <p class="footer-fineprint">Outdoor amenities may close in severe weather.</p>
+          </div>
+        </div>
+        <div class="footer-meta">
+          <span>&copy; 2026 Gastrau's Golf Center</span>
+          <span><a href="/index.html">Back to home</a></span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const revealElements = document.querySelectorAll(".reveal");
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      );
+      revealElements.forEach((item) => revealObserver.observe(item));
+    </script>
+  </body>
+</html>
